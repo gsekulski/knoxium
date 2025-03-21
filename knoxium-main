@@ -1,0 +1,21 @@
+adb kill-server
+adb install macro.apk
+adb shell settings put system OPTION_SCREEN_LOCK 1
+adb shell pm disable-user --user 0 com.samsung.android.kgclient
+adb shell pm uninstall --user 0 com.samsung.android.kgclient
+adb shell am start -n com.android.systemui/com.android.systemui.sensorprivacy.television.TvUnblockSensorActivity
+adb shell pm uninstall --user 0 com.samsung.android.mdm
+adb shell pm disable-user --user 0 com.sec.enterprise.knox.cloudmdm.smdms
+adb shell pm uninstall --user 0 com.sec.enterprise.knox.cloudmdm.smdms
+adb shell pm uninstall --user 0 com.samsung.android.app.omcagent
+adb shell pm grant com.arlosoft.macrodroid android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant com.arlosoft.macrodroid android.permission.READ_PHONE_STATE
+adb shell pm grant com.arlosoft.macrodroid android.permission.DUMP
+adb shell settings put secure enabled_accessibility_services com.arlosoft.macrodroid/com.arlosoft.macrodroid.triggers.services.MacroDroidAccessibilityServiceJellyBean
+adb shell pm disable-user --user 0 com.google.android.setupwizard
+adb shell pm disable-user --user 0 com.sec.android.app.SecSetupWizard
+adb shell pm enable --user 0 com.google.android.setupwizard
+adb shell pm enable --user 0 com.sec.android.app.SecSetupWizard
+adb shell settings put global device_provisioned 1
+adb shell content insert --uri content://settings/secure --bind name:s:user_setup_complete --bind value:s:1
+adb shell am start -n com.android.systemui/com.android.systemui.sensorprivacy.television.TvUnblockSensorActivity

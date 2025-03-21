@@ -1,0 +1,8 @@
+*.swp
+*.swo
+*.swn
+*.un~
+adb.log
+*.trace
+*.out
+*.hprof
