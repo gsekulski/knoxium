@@ -1,2 +1,5 @@
-# Presumably the script will be run of Windows (default FRP tool platform).
+# Presumably the script will be run on Windows (default FRP tool platform).
 * text eol=crlf
+*.jpg binary
+*.jpeg binary
+*.png binary
